@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import {
     Nav,
     NavMenu,
-    NavItem
+    NavItem,
+    NavLink
 } from './NavBar.elements'
 
 
@@ -13,13 +14,17 @@ const Navbar = () => {
         <>
         <Nav>
             <NavMenu>
-                <Link to="/Home">
                 <NavItem>
-                    Inicio
+                    <NavLink to="/Home">
+                        Home
+                    </NavLink>
                 </NavItem>
                 
-                </Link>
-
+                <NavItem>
+                    <NavLink to="/">
+                        Login
+                    </NavLink>
+                </NavItem>
             </NavMenu>
 
         </Nav>
