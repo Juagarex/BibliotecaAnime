@@ -1,11 +1,25 @@
-import React from 'react'
+import { useState } from "react";
+import React from "react";
+import { Container } from "./Login.elements";
 
 const Login = () => {
-    return (
-        <div>
-            <h1> hola y bienvenido a mi app</h1>
-        </div>
-    )
-}
+  const [toggle, setToggle] = useState(true);
 
-export default Login
+  function active_disable() {
+       setToggle(!toggle);
+       console.log(toggle);
+  }
+
+  return (
+    <>
+      <Container>
+        <h3 className={ toggle ? 'active': 'disable'} >
+          Hola mundo
+        </h3>
+        <button onClick={active_disable}> Ocultar </button>
+      </Container>
+    </>
+  );
+};
+
+export default Login;
